@@ -4,7 +4,8 @@ var ajax = require('ajax');
 
 // Create a Card with title and subtitle
 var card = new UI.Card({
-  title:'Click for a pickup line'
+  title:'Click Select',
+  subtitle: 'For Mad Game'
 });
 card.show();
 
@@ -15,7 +16,7 @@ card.on('click', 'select', function() {
   });
   loading.show();
   console.log("test");
-  // Get information  
+  // Get information
   ajax({ url: 'https://www.kimonolabs.com/api/35u0ax40?apikey=drXUUfvK516nGaCNZwneGEIt6UZWtiWe', type: 'json'},
     function(data) {
       console.log(JSON.stringify(data));
