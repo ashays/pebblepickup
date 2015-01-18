@@ -17,16 +17,18 @@ card.on('click', 'select', function() {
   loading.show();
   console.log("test");
   // Get information
-  ajax({ url: 'https://www.kimonolabs.com/api/35u0ax40?apikey=drXUUfvK516nGaCNZwneGEIt6UZWtiWe', type: 'json'},
+  ajax({ url: 'https://www.kimonolabs.com/api/a38ll6me?apikey=drXUUfvK516nGaCNZwneGEIt6UZWtiWe', type: 'json'},
     function(data) {
       console.log(JSON.stringify(data));
-      var pickupline = data.results.collection1[0].pickupLine;
+      var randLine = Math.floor(Math.random() * data.count);
+      var pickupline = data.results.collection1[randLine].pickupLine;
       console.log(data.results.collection1.pickupLine);
-      var user = data.results.collection1[0].user;
+      var user = data.results.collection1[randLine].user;
       console.log(data.results.collection1.user);
       var line = new UI.Card({
         title: pickupline,
-        subtitle: user
+        body: user,
+        scrollable: true
       });
       line.show();
     }, function(error) {
