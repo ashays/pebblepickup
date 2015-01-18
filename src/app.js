@@ -1,6 +1,9 @@
 var UI = require('ui');
 var ajax = require('ajax');
+var Accel = require('ui/accel');
+var Vibe = require('ui/vibe');
 
+Accel.init();
 
 // Create a Card with title and subtitle
 var card = new UI.Card({
@@ -10,7 +13,8 @@ var card = new UI.Card({
 card.show();
 
 
-card.on('click', 'select', function() {
+Accel.on('tap', function(e) {
+  Vibe.vibrate('short');
   var loading = new UI.Card({
     title:'Chill I am loading'
   });
