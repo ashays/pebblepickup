@@ -13,7 +13,9 @@ var card = new UI.Card({
 card.show();
 
 
-Accel.on('tap', function(e) {
+Accel.on('tap', newPickupLine);
+
+function newPickupLine() {
   Vibe.vibrate('short');
   var loading = new UI.Card({
     title:'Chill I am loading'
@@ -34,8 +36,10 @@ Accel.on('tap', function(e) {
         body: user,
         scrollable: true
       });
+      loading.hide();
       line.show();
     }, function(error) {
-      console.log('hrllo');
-    });
-});
+      console.log('hello');
+      loading.subtitle('error loading pickup line');
+    });  
+}
