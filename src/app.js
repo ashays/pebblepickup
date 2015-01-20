@@ -7,7 +7,7 @@ Accel.init();
 
 // Create a Card with title and subtitle
 var card = new UI.Card({
-  title:'Click Select',
+  title:'Flick wrist',
   subtitle: 'For Mad Game'
 });
 card.show();
